@@ -1,49 +1,56 @@
+//Get image ready
+var img = document.createElement('img');
 
+img.src = 'https://static.toiimg.com/photo/70659282.cms';
+img.alt = 'Happy IndependenceDay';
+img.setAttribute('Class', 'img-fluid');
 
-//callback function
-function callback(countNumber, countFunction, messageFunction) {
-    var count = showCount(countNumber);
-    console.log('count', count)
+//Call back hell example
+setTimeout(() => {
+    //10
+    document.getElementById('showCount').innerText = 10
+    setTimeout(() => {
+        //9
+        document.getElementById('showCount').innerText = 9
+        setTimeout(() => {
+            //8
+            document.getElementById('showCount').innerText = 8
+            setTimeout(() => {
+                //7
+                document.getElementById('showCount').innerText = 7
+                setTimeout(() => {
+                    //6
+                    document.getElementById('showCount').innerText = 6
+                    setTimeout(() => {
+                        //5
+                        document.getElementById('showCount').innerText = 5
+                        setTimeout(() => {
+                            //4
+                            document.getElementById('showCount').innerText = 4
+                            setTimeout(() => {
+                                //3
+                                document.getElementById('showCount').innerText = 3
+                                setTimeout(() => {
+                                    //2
+                                    document.getElementById('showCount').innerText = 2
+                                    setTimeout(() => {
+                                        //1
+                                        document.getElementById('showCount').innerText = 1
+                                        setTimeout(() => {
+                                            document.getElementById('imgDiv').append(img);
 
-    setTimeout(function () {
+                                            document.getElementById('counterDiv').innerHTML = '';
 
-        if (count >= 1) {
-
-            count = showCount(countNumber);
-            callback(count, countFunction, messageFunction);
-        } else {
-            messageFunction();
-        }
+                                        }, 1000)
+                                    }, 1000)
+                                }, 1000)
+                            }, 1000)
+                        }, 1000)
+                    }, 1000)
+                }, 1000)
+            }, 1000)
+        }, 1000)
     }, 1000)
-}
+}, 1000)
 
 
-//function to show count
-function showCount(count) {
-    var currentHeading = document.getElementById('showCount');
-    currentHeading.innerText = count;
-    count--;
-    return count;
-
-
-
-
-}
-
-
-//function to display message
-function showMessage(message) {
-    var img = document.createElement('img');
-
-    img.src = 'https://static.toiimg.com/photo/70659282.cms';
-    img.alt = 'Happy IndependenceDay';
-    img.setAttribute('Class', 'img-fluid');
-
-    document.getElementById('imgDiv').append(img);
-
-    var hideDiv = document.getElementById('counterDiv');
-    hideDiv.innerHTML = ''
-}
-
-//call the function to display the output
-callback(10, showCount, showMessage);
