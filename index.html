@@ -61,49 +61,60 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">Below is all the code implemented<br>
                             <code>
-                        //callback function <br>
-                        function callback(countNumber, countFunction, messageFunction) {<br>
-                        var count = showCount(countNumber);<br>
-                        console.log('count', count)<br>
-                        
-                        setTimeout(function () {<br>
-                        
-                        if (count >= 1) {<br>
-                        count = showCount(countNumber);<br>
-                        callback(count, countFunction, messageFunction);<br>
-                        } else {<br>
-                        messageFunction();<br>
-                        }<br>
-                        }, 1000)<br>
-                        }<br>
-                        
-                        <br>
-                        //function to show count<br>
-                        function showCount(count) {<br>
-                        var currentHeading = document.getElementById('showCount');<br>
-                        currentHeading.innerText = count;<br>
-                        count--;<br>
-                        return count;<br>
-                        }<br>
-                        <br>
-                        
-                        
-                        //function to display message<br>
-                        function showMessage(message) {<br>
+                        //Get image ready<br>
                         var img = document.createElement('img');<br>
                         
                         img.src = 'https://static.toiimg.com/photo/70659282.cms';<br>
                         img.alt = 'Happy IndependenceDay';<br>
                         img.setAttribute('Class', 'img-fluid');<br>
                         
+                        //Call back hell example<br>
+                        setTimeout(() => {<br>
+                        //10<br>
+                        document.getElementById('showCount').innerText = 10<br>
+                        setTimeout(() => {<br>
+                        //9<br>
+                        document.getElementById('showCount').innerText = 9<br>
+                        setTimeout(() => {<br>
+                        //8<br>
+                        document.getElementById('showCount').innerText = 8<br>
+                        setTimeout(() => {<br>
+                        //7<br>
+                        document.getElementById('showCount').innerText = 7<br>
+                        setTimeout(() => {<br>
+                        //6<br>
+                        document.getElementById('showCount').innerText = 6<br>
+                        setTimeout(() => {<br>
+                        //5<br>
+                        document.getElementById('showCount').innerText = 5<br>
+                        setTimeout(() => {<br>
+                        //4<br>
+                        document.getElementById('showCount').innerText = 4<br>
+                        setTimeout(() => {<br>
+                        //3<br>
+                        document.getElementById('showCount').innerText = 3<br>
+                        setTimeout(() => {<br>
+                        //2<br>
+                        document.getElementById('showCount').innerText = 2<br>
+                        setTimeout(() => {<br>
+                        //1<br>
+                        document.getElementById('showCount').innerText = 1<br>
+                        setTimeout(() => {
                         document.getElementById('imgDiv').append(img);<br>
                         
-                        var hideDiv = document.getElementById('counterDiv');<br>
-                        hideDiv.innerHTML = ''<br>
-                        }<br>
+                        document.getElementById('counterDiv').innerHTML = '';<br>
                         <br>
-                        //call the function to display the output<br>
-                        callback(10, showCount, showMessage);<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
+                        }, 1000)<br>
                                     </code>
                         </div>
                     </div>
